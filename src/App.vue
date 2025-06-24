@@ -6,7 +6,7 @@ import Footer from './components/Footer.vue'
 const users = ref([])
 
 onMounted(async () => {
-  const res = await fetch('http://localhost:3000/api/users')
+  const res = await fetch('http://localhost:3000')
   users.value = await res.json()
 })
 </script>

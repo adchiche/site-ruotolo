@@ -13,6 +13,7 @@ if (!process.env.NOTION_API_KEY || !databaseId) {
 }
 
 const app = express();
+
 app.locals.notion = notion;
 app.locals.databaseId = databaseId;
 
