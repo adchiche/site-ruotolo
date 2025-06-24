@@ -25,7 +25,7 @@
                 Il a commencé le jiu-jitsu brésilien à l'âge de 3 ans, suivant les traces de son père.
                 Sa technique exceptionnelle et sa créativité sur le tapis ont fait de lui une figure 
                 emblématique du grappling moderne.
-              </p>
+            </p>
               <div class="mt-4">
                 <h3 class="text-lg font-semibold text-gray-900">Parcours</h3>
                 <ul class="mt-2 space-y-2 text-gray-600">
@@ -37,8 +37,8 @@
               </div>
             </div>
           </div>
+          </div>
         </div>
-      </div>
 
       <!-- Tye Ruotolo Section -->
       <div class="mt-16">
@@ -51,8 +51,8 @@
               <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Champion de Grappling</div>
               <h2 class="mt-2 text-3xl font-bold text-gray-900">Tye Ruotolo</h2>
               <p class="mt-4 text-gray-600">
-                Tye Ruotolo, frère jumeau de Kade, est également un champion de grappling 
-                reconnu mondialement. Sa force physique et sa technique précise en font 
+              Tye Ruotolo, frère jumeau de Kade, est également un champion de grappling 
+              reconnu mondialement. Sa force physique et sa technique précise en font 
                 un adversaire redoutable sur le tapis. Il a développé un style unique qui 
                 combine puissance et finesse technique.
               </p>

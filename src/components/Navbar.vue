@@ -8,6 +8,7 @@
         <div class="flex items-center space-x-4">
           <router-link to="/" class="text-gray-600 hover:text-gray-900">Accueil</router-link>
           <router-link to="/contact" class="text-gray-600 hover:text-gray-900">Contact</router-link>
+          <router-link to="/inscription" class="text-gray-600 hover:text-gray-900">Inscription</router-link>
         </div>
       </div>
     </div>

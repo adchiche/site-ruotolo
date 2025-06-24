@@ -45,9 +45,9 @@
                 <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Champion de Grappling</div>
                 <h3 class="mt-2 text-3xl font-bold text-gray-900">Kade Ruotolo</h3>
                 <p class="mt-4 text-gray-600">
-                  Né en 2003, Kade Ruotolo est l'un des plus jeunes champions de grappling au monde. 
+                  Né en 2003, Kade Ruotolo est l'un des plus jeunes champions de grappling au monde.
                   Il a commencé le jiu-jitsu brésilien à l'âge de 3 ans, suivant les traces de son père.
-                  Sa technique exceptionnelle et sa créativité sur le tapis ont fait de lui une figure 
+                  Sa technique exceptionnelle et sa créativité sur le tapis ont fait de lui une figure
                   emblématique du grappling moderne.
                 </p>
                 <div class="mt-4">
@@ -75,9 +75,9 @@
                 <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Champion de Grappling</div>
                 <h3 class="mt-2 text-3xl font-bold text-gray-900">Tye Ruotolo</h3>
                 <p class="mt-4 text-gray-600">
-                  Tye Ruotolo, frère jumeau de Kade, est également un champion de grappling 
-                  reconnu mondialement. Sa force physique et sa technique précise en font 
-                  un adversaire redoutable sur le tapis. Il a développé un style unique qui 
+                  Tye Ruotolo, frère jumeau de Kade, est également un champion de grappling
+                  reconnu mondialement. Sa force physique et sa technique précise en font
+                  un adversaire redoutable sur le tapis. Il a développé un style unique qui
                   combine puissance et finesse technique.
                 </p>
                 <div class="mt-4">
@@ -105,14 +105,14 @@
                 <div class="uppercase tracking-wide text-sm text-indigo-600 font-semibold">Leurs Débuts</div>
                 <h3 class="mt-2 text-3xl font-bold text-gray-900">Une Passion Familiale</h3>
                 <p class="mt-4 text-gray-600">
-                  Les frères Ruotolo ont été initiés au jiu-jitsu brésilien dès leur plus jeune âge par leur père, 
-                  un passionné d'arts martiaux. Dès l'âge de 3 ans, ils commençaient déjà à s'entraîner ensemble, 
+                  Les frères Ruotolo ont été initiés au jiu-jitsu brésilien dès leur plus jeune âge par leur père,
+                  un passionné d'arts martiaux. Dès l'âge de 3 ans, ils commençaient déjà à s'entraîner ensemble,
                   développant une connexion unique qui allait devenir leur force sur le tapis.
                 </p>
                 <p class="mt-4 text-gray-600">
-                  Leur enfance a été marquée par des heures d'entraînement quotidien, des compétitions locales, 
-                  et une progression rapide qui a surpris la communauté du grappling. Leur relation fraternelle 
-                  et leur passion commune pour le sport ont créé une dynamique d'entraînement exceptionnelle, 
+                  Leur enfance a été marquée par des heures d'entraînement quotidien, des compétitions locales,
+                  et une progression rapide qui a surpris la communauté du grappling. Leur relation fraternelle
+                  et leur passion commune pour le sport ont créé une dynamique d'entraînement exceptionnelle,
                   où chacun pousse l'autre à s'améliorer constamment.
                 </p>
               </div>
@@ -185,7 +185,7 @@
         </div>
       </div>
     </div>
-
+    
     <!-- Video Modal -->
     <div v-if="selectedVideo" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
       <div class="bg-white rounded-lg max-w-4xl w-full">
@@ -200,26 +200,6 @@
         <div class="p-4">
           <YouTubeVideo :videoId="selectedVideo" />
         </div>
-      </div>
-    </div>
-
-    <!-- Indicateur de chargement global -->
-    <div v-if="loading" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div class="bg-white p-4 rounded-lg">
-        <div class="flex items-center space-x-2">
-          <div class="animate-spin rounded-full h-4 w-4 border-b-2 border-indigo-600"></div>
-          <p class="text-gray-700">Chargement des vidéos...</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Message d'erreur -->
-    <div v-if="error" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div class="bg-white p-4 rounded-lg">
-        <p class="text-red-600">{{ error }}</p>
-        <button @click="loadVideosAsync" class="mt-2 px-4 py-2 bg-indigo-600 text-white rounded hover:bg-indigo-700">
-          Réessayer
-        </button>
       </div>
     </div>
   </div>
@@ -277,7 +257,8 @@ export default {
         }
       },
       loading: false,
-      error: null
+      error: null,
+      inscriptions: []
     }
   },
   async created() {
@@ -329,4 +310,4 @@ export default {
     }
   }
 }
-</script> 
+</script>
