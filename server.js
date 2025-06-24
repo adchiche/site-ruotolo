@@ -1,51 +1,24 @@
-require("dotenv").config();
-const express = require("express");
-const { Client } = require("@notionhq/client");
-const cors = require("cors");
+import express from "express";
+import dotenv from "dotenv";
+import { Client } from "@notionhq/client";
+import appRoutes from "./app.js";
 
-// Initialisation du client Notion
+dotenv.config();
+
 const notion = new Client({ auth: process.env.NOTION_API_KEY });
 const databaseId = process.env.NOTION_DATABASE_ID;
 
+if (!process.env.NOTION_API_KEY || !databaseId) {
+  throw new Error("❌ NOTION_API_KEY ou NOTION_DATABASE_ID manquant dans .env");
+}
+
 const app = express();
+app.locals.notion = notion;
+app.locals.databaseId = databaseId;
 
-// Middleware pour parser le JSON et gérer les CORS
-app.use(express.json());
-app.use(cors());
+appRoutes(app);
 
-// Route pour récupérer la liste des inscriptions
-app.get("/list", async (req, res) => {
-  try {
-    const response = await notion.databases.query({ 
-      database_id: databaseId,
-      sorts: [
-        {
-          property: "Name",
-          direction: "ascending"
-        }
-      ]
-    });
-    
-    const entries = [];
-    for (const page of response.results) {
-      entries.push({
-        id: page.id,
-        name: page.properties.Name?.title[0]?.plain_text || '',
-        lastName: page.properties.LastName?.rich_text[0]?.plain_text || '',
-        number: page.properties.Number?.number || '',
-        phoneNumber: page.properties["Phone Number"]?.phone_number || '',
-        adress: page.properties.Adress?.rich_text[0]?.plain_text || ''
-      });
-    }
-
-    res.json(entries);
-  } catch (error) {
-    console.error('Erreur lors de la récupération des données:', error);
-    res.status(500).json({ error: 'Erreur lors de la récupération des données' });
-  }
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`✅ Serveur lancé sur http://localhost:${port}`);
 });
-
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur le port ${PORT}`);
-}); 
